@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortFiles", "SortFiles.csproj", "{4B1C114A-0A3B-433F-B8C5-701269413501}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EC271FD7-9BC6-44B6-B1B5-0880C19992D0}"
+	ProjectSection(SolutionItems) = preProject
+		bin\Debug\net8.0\config.json = bin\Debug\net8.0\config.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B1C114A-0A3B-433F-B8C5-701269413501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B1C114A-0A3B-433F-B8C5-701269413501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B1C114A-0A3B-433F-B8C5-701269413501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B1C114A-0A3B-433F-B8C5-701269413501}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D2FACA0-B4EE-45AE-A0F5-5999753DC038}
+	EndGlobalSection
+EndGlobal
