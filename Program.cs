@@ -46,6 +46,8 @@ class Program
         string otherFiles = Path.Combine(outputFolder, "other");
         string fontFiles = Path.Combine(outputFolder, "fonts");
         string excelFiles = Path.Combine(outputFolder, "excel");
+        string appleFiles = Path.Combine(outputFolder, "apple");
+
 
 
         Directory.CreateDirectory(picturesFolder);
@@ -60,6 +62,7 @@ class Program
         Directory.CreateDirectory(otherFiles);
         Directory.CreateDirectory(fontFiles);
         Directory.CreateDirectory(excelFiles);
+        Directory.CreateDirectory(appleFiles);
 
 
         string[] files = Directory.GetFiles(inputFolder, "*.*", SearchOption.AllDirectories);
@@ -70,7 +73,7 @@ class Program
             {
                 ".jpg" or ".jpeg" or ".png" or ".gif" or ".bmp" or ".tif" or 
                 ".heic" or ".svg" or ".ico" or ".eps" or ".dxf" => picturesFolder,
-                ".txt" or ".docx" => textFolder,
+                ".txt" or ".docx" or ".doc" => textFolder,
                 ".pdf" => pdfFolder,
                 ".mp3" or ".wav" or ".amr" or ".m4a" => musicFolder,
                 ".mp4" or ".mov" or ".avi" => videoFolder,
@@ -84,6 +87,7 @@ class Program
                 ".ds_store" => otherFiles,
                 ".ttf" or ".wim" or ".rtf" => fontFiles,
                 ".xlsx" or ".csv" => excelFiles,
+                ".apple" => appleFiles,
                 _ => null
             };
 
