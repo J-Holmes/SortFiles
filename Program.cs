@@ -91,11 +91,35 @@ class Program
             {
                 string fileName = Path.GetFileName(file);
                 string destinationPath = Path.Combine(destinationFolder, fileName);
+
+                int count = 1;
+                while (File.Exists(destinationPath))
+                {
+                    string fileNameWithoutExt = Path.GetFileNameWithoutExtension(fileName);
+                    string fileExt = Path.GetExtension(fileName);
+                    destinationPath = Path.Combine(destinationFolder, $"{fileNameWithoutExt}_{count}{fileExt}");
+                    count++;
+                }
+
                 File.Move(file, destinationPath);
                 Console.WriteLine($"Moved: {fileName} -> {destinationFolder}");
             }
         }
 
+        DeleteEmptyDirectories(inputFolder);
         Console.WriteLine("Sorting complete.");
+    }
+
+    static void DeleteEmptyDirectories(string directory)
+    {
+        foreach (var dir in Directory.GetDirectories(directory))
+        {
+            DeleteEmptyDirectories(dir);
+            if (Directory.GetFiles(dir).Length == 0 && Directory.GetDirectories(dir).Length == 0)
+            {
+                Directory.Delete(dir);
+                Console.WriteLine($"Deleted empty folder: {dir}");
+            }
+        }
     }
 }
