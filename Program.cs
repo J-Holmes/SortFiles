@@ -68,7 +68,8 @@ class Program
             string extension = Path.GetExtension(file).ToLower();
             string destinationFolder = extension switch
             {
-                ".jpg" or ".jpeg" or ".png" or ".gif" or ".bmp" or ".tif" or ".heic" or ".svg" or ".ico" => picturesFolder,
+                ".jpg" or ".jpeg" or ".png" or ".gif" or ".bmp" or ".tif" or 
+                ".heic" or ".svg" or ".ico" or ".eps" or ".dxf" => picturesFolder,
                 ".txt" or ".docx" => textFolder,
                 ".pdf" => pdfFolder,
                 ".mp3" or ".wav" or ".amr" or ".m4a" => musicFolder,
@@ -77,12 +78,12 @@ class Program
                 ".msg" or ".pst" => emailFolder,
                 ".html" or ".webp" => htmlFolder,
                 ".java" or ".h" or ".ai" or ".psd" or ".sqlite" or ".exe" or ".dll" 
-                    or ".xml" or ".reg" or ".ini" or ".cab" or ".inf" 
-                    or ".f" or ".sh" or ".gz" or ".py" 
-                    or ".swf" or ".plist" => softwareDev,
-                ".DS_Store" => otherFiles,
+                    or ".xml" or ".reg" or ".ini" or ".cab" or ".inf" or ".jsp"
+                    or ".f" or ".sh" or ".gz" or ".py" or ".php" or ".icc"
+                    or ".swf" or ".plist" or ".c" or ".bat" => softwareDev,
+                ".ds_store" => otherFiles,
                 ".ttf" or ".wim" or ".rtf" => fontFiles,
-                ".xlsx" => excelFiles,
+                ".xlsx" or ".csv" => excelFiles,
                 _ => null
             };
 
