@@ -47,7 +47,9 @@ class Program
         string fontFiles = Path.Combine(outputFolder, "fonts");
         string excelFiles = Path.Combine(outputFolder, "excel");
         string appleFiles = Path.Combine(outputFolder, "apple");
-
+        string encryptedFiles = Path.Combine(outputFolder, "encrypted");
+        string powerpointFiles = Path.Combine(outputFolder, "powerpoint");
+        string shortcutFiles = Path.Combine(outputFolder, "shortcuts");
 
 
         Directory.CreateDirectory(picturesFolder);
@@ -63,6 +65,9 @@ class Program
         Directory.CreateDirectory(fontFiles);
         Directory.CreateDirectory(excelFiles);
         Directory.CreateDirectory(appleFiles);
+        Directory.CreateDirectory(encryptedFiles);
+        Directory.CreateDirectory(powerpointFiles);
+        Directory.CreateDirectory(shortcutFiles);
 
 
         string[] files = Directory.GetFiles(inputFolder, "*.*", SearchOption.AllDirectories);
@@ -72,23 +77,27 @@ class Program
             string destinationFolder = extension switch
             {
                 ".jpg" or ".jpeg" or ".png" or ".gif" or ".bmp" or ".tif" or 
-                ".heic" or ".svg" or ".ico" or ".eps" or ".dxf" => picturesFolder,
-                ".txt" or ".docx" or ".doc" => textFolder,
+                ".heic" or ".svg" or ".ico" or ".eps" or ".dxf" or ".emf" => picturesFolder,
+                ".txt" or ".docx" or ".doc" or ".one" or ".wpd" or ".vsd" => textFolder,
                 ".pdf" => pdfFolder,
-                ".mp3" or ".wav" or ".amr" or ".m4a" => musicFolder,
-                ".mp4" or ".mov" or ".avi" => videoFolder,
+                ".mp3" or ".wav" or ".amr" or ".m4a" or ".aif" or ".mid" => musicFolder,
+                ".mp4" or ".mov" or ".avi" or ".wma" => videoFolder,
                 ".zip" => zipFolder,
                 ".msg" or ".pst" => emailFolder,
-                ".html" or ".webp" or ".woff" => htmlFolder,
+                ".html" or ".webp" or ".woff" or ".asp" or ".url" => htmlFolder,
                 ".java" or ".h" or ".ai" or ".psd" or ".sqlite" or ".exe" 
                     or ".dll" or ".xml" or ".reg" or ".ini" or ".cab" or ".inf" 
                     or ".jsp" or ".f" or ".sh" or ".gz" or ".py" or ".php" 
                     or ".icc" or ".swf" or ".plist" or ".c" or ".bat" 
-                    or ".json" or ".pl" or ".pm" or ".jar" or ".tib" => softwareDev,
+                    or ".json" or ".pl" or ".pm" or ".jar" or ".elf"
+                    or ".tib" or ".class" or ".swc" or ".mdb" => softwareDev,
                 ".ds_store" => otherFiles,
                 ".ttf" or ".wim" or ".rtf" => fontFiles,
-                ".xlsx" or ".csv" => excelFiles,
-                ".apple" => appleFiles,
+                ".xlsx" or ".csv" or ".xls" => excelFiles,
+                ".apple" or ".key" => appleFiles,
+                ".gpg" => encryptedFiles,
+                ".pptx" or ".ppt" => powerpointFiles,
+                ".lnk" => shortcutFiles,
                 _ => null
             };
 
