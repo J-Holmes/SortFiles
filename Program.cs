@@ -79,11 +79,12 @@ class Program
                 ".mp4" or ".mov" or ".avi" => videoFolder,
                 ".zip" => zipFolder,
                 ".msg" or ".pst" => emailFolder,
-                ".html" or ".webp" => htmlFolder,
-                ".java" or ".h" or ".ai" or ".psd" or ".sqlite" or ".exe" or ".dll"
-                    or ".xml" or ".reg" or ".ini" or ".cab" or ".inf" or ".jsp"
-                    or ".f" or ".sh" or ".gz" or ".py" or ".php" or ".icc"
-                    or ".swf" or ".plist" or ".c" or ".bat" or ".json" => softwareDev,
+                ".html" or ".webp" or ".woff" => htmlFolder,
+                ".java" or ".h" or ".ai" or ".psd" or ".sqlite" or ".exe" 
+                    or ".dll" or ".xml" or ".reg" or ".ini" or ".cab" or ".inf" 
+                    or ".jsp" or ".f" or ".sh" or ".gz" or ".py" or ".php" 
+                    or ".icc" or ".swf" or ".plist" or ".c" or ".bat" 
+                    or ".json" or ".pl" or ".pm" or ".jar" or ".tib" => softwareDev,
                 ".ds_store" => otherFiles,
                 ".ttf" or ".wim" or ".rtf" => fontFiles,
                 ".xlsx" or ".csv" => excelFiles,
